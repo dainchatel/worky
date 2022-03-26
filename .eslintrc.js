@@ -14,8 +14,8 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    semi: [2, 'never'],
-    quotes: [2, 'single'],
-    'comma-dangle': [2, { objects: 'always-multiline' }], 
+    semi: ['error', 'never'],
+    quotes: ['error', 'single'],
+    'comma-dangle': ['error', { objects: 'always-multiline' }], 
   },
 }
