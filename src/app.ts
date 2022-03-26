@@ -9,7 +9,7 @@ const port = process.env.PORT
 app.get('/', (req, res) => {
   res.send('Hello BROs!')
 })
-const thing = 'thing'
+
 app.listen(port, () => {
   return logger.info(`Express is listening at http://localhost:${port}`)
 })
