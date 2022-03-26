@@ -1,9 +1,9 @@
 import winston from 'winston'
 
 const logConfiguration = {
-  'transports': [
+  transports: [
       new winston.transports.Console()
-  ]
+  ],
 }
 
 export const logger = winston.createLogger(logConfiguration)
