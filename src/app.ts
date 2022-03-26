@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello BROs!')
 })
 
+debugger
 app.listen(port, () => {
   return logger.info(`Express is listening at http://localhost:${port}`)
 })
