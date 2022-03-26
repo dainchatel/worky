@@ -1,11 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv'
+
+import { router as workshopsRouter } from './routes/workshops'
 import { logger } from './logger'
 import { httpStatusCodes } from './consts'
 
 dotenv.config()
 const app = express()
 const port = process.env.PORT
+
+app.use(workshopsRouter)
 
 app.get('/', (req, res) => {
     const ip = req.socket.remoteAddress || req.header('x-forwarded-for')
