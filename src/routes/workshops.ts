@@ -2,20 +2,29 @@ import express from 'express'
 
 export const router = express.Router()
 
+// add a router.use validator for workshop req.body
+
 router.get('/workshops', (req, res) => {
-    res.send('SHOW ALL WORKSHOPS')
+    const allWorkshops = req.workshopService.list()
+    res.send(allWorkshops)
 })
 
 router.get('/workshops/:id', (req, res) => {
-    res.send(`SHOWING WORKSHOP ${req.params.id}`)
+    const foundWorkshop = req.workshopService.get(req.params.id)
+    res.send(foundWorkshop)
 })
 
 router.post('/workshops', (req, res) => {
-    res.send('CREATING WORKSHOP')
+    const newWorkshop = req.workshopService.create(req.body)
+    res.send(newWorkshop)
 })
+
 router.put('/workshops/:id', (req, res) => {
-    res.send(`UPDATING WORKSHOP ${req.params.id}`)
+    const updatedWorkshop = req.workshopService.update(req.params.id, req.body)
+    res.send(updatedWorkshop)
 })
+
 router.delete('/workshops/:id', (req, res) => {
-    res.send(`DELETING WORKSHOP ${req.params.id}`)
+    const deletedWorkshop = req.workshopService.delete(req.params.id)
+    res.send(deletedWorkshop)
 })
