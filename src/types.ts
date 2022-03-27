@@ -1,3 +1,5 @@
+import WorkshopService from './services/workshop'
+
 export const GenreName = [
     'fiction',
     'screenwriting',
@@ -7,7 +9,7 @@ export const GenreName = [
 export type Genre = typeof GenreName[number]
 
 export type WorkshopMeta = {
-    forCredit: string,
+    forCredit: boolean,
 }
 
 export type WorkshopAttributes = {
@@ -19,3 +21,15 @@ export type WorkshopAttributes = {
 export type Workshop = WorkshopAttributes & {
     id: string,
 }
+
+export type DataStore = {
+    workshops: Array<Workshop>
+}
+
+declare global {
+    namespace Express {
+      interface Request {
+        workshopService: WorkshopService
+      }
+    }
+  }

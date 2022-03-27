@@ -19,5 +19,6 @@ module.exports = {
         indent: ['error', 4],
         'object-curly-spacing': ['error', 'always'],
         'comma-dangle': ['error', { objects: 'always-multiline' }], 
+        '@typescript-eslint/no-namespace': 'off',
     },
 }
